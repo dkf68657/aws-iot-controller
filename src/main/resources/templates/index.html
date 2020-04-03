@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bulb Controller</title>
+<script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+<link href="/main.css" rel="stylesheet"></link>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="/index.js"></script>
+</head>
+<body>
+	<div id="main-content" class="container">
+		<div class="row" style="margin-bottom: 20px;">
+			<div class="col-md-12">
+				<div class="row">
+					<h1 style="color: #5e9ca0; text-align: center;">Bulb Switch</h1>
+				</div>
+				<div class="row">
+					<div class="col-sm-4" style="text-align: center;">
+						<div><label class="switch">
+							<input id="red-chk" name="red" type="checkbox" > <span
+								class="slider round"></span></label>
+						</div>
+						
+						<div class="bulb-label">
+							 <span class="red-text">red</span>
+						</div>
+					</div>
+					<div class="col-sm-4" style="text-align: center;">
+						<div><label class="switch">
+							<input id="green-chk" name="green" type="checkbox" > <span
+								class="slider round"></span></label>
+						</div>
+						<div class="bulb-label">
+							 <span class="green-text">green</span>
+						</div>
+					</div>
+					<div class="col-sm-4" style="text-align: center;">
+						<div><label class="switch">
+							<input id="blue-chk" name="blue" type="checkbox" > <span
+								class="slider round"></span></label>
+						</div>
+						<div class="bulb-label">
+							 <span class="blue-text">blue</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
