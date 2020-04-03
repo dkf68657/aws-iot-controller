@@ -9,8 +9,8 @@
 		<version>2.2.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.haresh</groupId>
-	<artifactId>AWS_IoT_Example</artifactId>
+	<groupId>com.aws.iot.training</groupId>
+	<artifactId>bulb-switch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bulb-switch</name>
 	<description>Demo project for Spring Boot</description>
