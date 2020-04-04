@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -21,7 +22,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
-public class UpdateDeviceShadow {
+public class UpdateDeviceShadow implements DisposableBean{
 
 	@Autowired
 	private InitIoTClient initIoTClient;
@@ -49,6 +50,7 @@ public class UpdateDeviceShadow {
 			}
 		}
 	}
+	
 
 	private ShadowThing getDeviceState(AWSIotDevice device)
 			throws JsonParseException, JsonMappingException, IOException {
@@ -145,6 +147,14 @@ public class UpdateDeviceShadow {
 		ShadowThing existingThing = getDeviceState(device);
 		awsIotClient.disconnect();
 		return existingThing.state.desired;
+	}
+
+
+	@Override
+	public void destroy() throws Exception {
+		if(awsIotClient!=null) {
+			awsIotClient.disconnect();		
+		}
 	}
 
 }
